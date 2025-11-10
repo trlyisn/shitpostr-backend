@@ -27,6 +27,9 @@ app.get("/", (req, res) => {
 // Use the authentication routes we created
 app.use("/api/auth", require("./routes/auth"));
 
+// Posts routes
+app.use("/api/posts", require("./routes/posts"));
+
 // --- Example of a Protected Route ---
 // This route is protected. Only users with a valid token can access it.
 app.get("/api/profile", authMiddleware, async (req, res) => {
